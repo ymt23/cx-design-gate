@@ -29,6 +29,33 @@ repo/.codex/cx-design-gate/calibration/
     <case-id>.md
 ```
 
+## Recommended Workflow
+
+Design Gate does not replace reference research or concept generation. It sits between requirements, research, concept exploration, implementation, and screenshot-based acceptance.
+
+```mermaid
+flowchart TD
+    A["Human + CX<br/>Screen requirements"] --> B["Design Gate<br/>Research framing"]
+    B --> C["LW / Mobbin / reference sources<br/>Structure, patterns, A/B clues"]
+    B --> D["CX image generation<br/>Mood, polish, decoration, visual direction"]
+    C --> E["Design Gate<br/>Synthesis"]
+    D --> E
+    E --> F["Visual Fidelity Contract<br/>Layers, components, hard fails, score caps"]
+    F --> G["Implementer CX<br/>Native implementation"]
+    G --> H["Simulator / screenshot evidence"]
+    H --> I["Design Gate<br/>Screenshot review"]
+    I --> J{"Pass?"}
+    J -->|Yes| K["Human<br/>Adopt / continue"]
+    J -->|No| L["Rework prompt<br/>Focused correction"]
+    L --> G
+```
+
+- Requirements define what the screen must do.
+- LW, Mobbin, and other references provide real shipped UI patterns, structure, and experiment clues.
+- CX image generation explores mood, polish, logo treatment, small decorative parts, and visual direction.
+- Design Gate synthesizes those inputs into a Visual Fidelity Contract.
+- Implementation is accepted only after screenshot-based review passes hard fail rules and score caps.
+
 ## Repository Layout
 
 ```text
