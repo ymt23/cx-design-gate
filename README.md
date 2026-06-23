@@ -1,10 +1,10 @@
-# CX Design Gate OSS
+# CX Design Gate
 
 CX Design Gate is a Codex plugin and skill for AI-driven UI design workflows. It separates project truth, visual contracts, implementation handoff, and screenshot-based design review so implementation agents do not treat build success or layout constraints as visual acceptance.
 
 ## Status
 
-Early OSS scaffold. The public API and workflow files may change before the first stable release.
+Early OSS plugin scaffold. The public API and workflow files may change before the first stable release.
 
 ## What This Plugin Provides
 
