@@ -43,6 +43,8 @@ examples/generic/
 
 Use the skill as `design-gate` in Codex. The skill expects a Project Context Packet or enough information to request one.
 
+When installed through the local marketplace, the skill appears as `cx-design-gate:design-gate` in new Codex chats.
+
 Typical flow:
 
 ```text
@@ -56,6 +58,8 @@ Typical flow:
 ## Validation
 
 The plugin and skill were validated with the bundled Codex plugin/skill validation scripts. The local environment did not include PyYAML, so validation was run with a temporary local YAML shim instead of installing dependencies into the plugin.
+
+The local plugin was also confirmed in a new Codex chat: `cx-design-gate:design-gate` appeared in Available skills and `SKILL.md` loaded successfully.
 
 ## License
 
