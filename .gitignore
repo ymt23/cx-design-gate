@@ -18,3 +18,9 @@ __pycache__/
 
 # Codex/local runtime artifacts
 .codex-local/
+
+# Project-local Design Gate data must stay in consuming repos, not this OSS repo
+.codex/cx-design-gate/calibration/
+.codex/cx-design-gate/context/
+private/
+*.local.md
