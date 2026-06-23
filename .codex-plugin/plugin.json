@@ -1,0 +1,28 @@
+{
+  "name": "cx-design-gate-oss",
+  "version": "0.1.0",
+  "description": "Visual fidelity gate for AI-driven UI implementation workflows.",
+  "author": {
+    "name": "ymt23"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CX Design Gate",
+    "shortDescription": "Gate AI UI work before implementation passes.",
+    "longDescription": "CX Design Gate provides reusable role definitions, project context packet requirements, visual fidelity contracts, hard fail rules, score caps, and handoff prompts for AI-driven UI design and implementation workflows.",
+    "developerName": "ymt23",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Design Gate for this screen. First obtain a Project Context Packet, then produce or review the Visual Fidelity Contract before implementation proceeds."
+  },
+  "repository": "https://github.com/ymt23/cx-design-gate.git",
+  "homepage": "https://github.com/ymt23/cx-design-gate",
+  "keywords": [
+    "codex",
+    "design-review",
+    "visual-fidelity",
+    "ui-ux",
+    "multi-agent",
+    "swiftui"
+  ]
+}
