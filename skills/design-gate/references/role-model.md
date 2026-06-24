@@ -20,8 +20,12 @@ Project Agent collects:
 - Reference assets.
 - Active calibration cases relevant to the target screen.
 
+Project Agent does not have to prebuild live reference research, Evidence Board, Reference Decision Matrix, or design proposals. For `design_direction`, Project Agent can pass only the Minimal Invocation Packet: request type, project id, target screen, requirement paths, calibration index path, and no-mutation constraints. Design Gate resolves the context, performs Lazyweb/Mobbin research, and blocks if required input or reference sources are unavailable.
+
 ## Architect CX
 Convert requirements and references into implementation-ready contracts. Architect CX defines layer separation, component responsibilities, state coverage, and hard gates before implementation.
+
+Architect CX must not create a new screen proposal or contract from requirements and calibration alone. It first needs an Evidence Board and Reference Decision Matrix with both Lazyweb and Mobbin evidence. It uses CX image generation only as purpose-based concept evidence, not as a replacement for live references.
 
 ## Designer CX / Design Gate
 Review visible UI. Designer CX must judge from the screenshot, video, simulator state, and contract, not from implementer claims.

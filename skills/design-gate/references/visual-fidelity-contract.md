@@ -5,23 +5,27 @@ Use this contract to convert requirements and references into a UI implementatio
 ## Contract Sections
 
 1. Screen Purpose
-2. Source References
-3. Adopted Elements
-4. Rejected Elements
-5. Transformed Elements
-6. Information Hierarchy
-7. Layer Model
-8. Layout Regions
-9. Component Breakdown
-10. Visual Tokens
-11. Text and Readability Rules
-12. State Coverage
-13. Animation and Polish Scope
-14. Implementation Scope
-15. Simulator Review Criteria
-16. Hard Fail Rules
-17. Score Caps
-18. Open Risks
+2. Evidence Board
+3. Reference Decision Matrix
+4. Source References
+5. Adopted Elements
+6. Rejected Elements
+7. Transformed Elements
+8. Information Hierarchy
+9. Layer Model
+10. Layout Regions
+11. Component Breakdown
+12. Visual Tokens
+13. Text and Readability Rules
+14. State Coverage
+15. Animation and Polish Scope
+16. Implementation Scope
+17. Simulator Review Criteria
+18. Hard Fail Rules
+19. Score Caps
+20. Open Risks
+
+For new design directions or contracts, create the Evidence Board and Reference Decision Matrix before filling Source References. Source References must cite live Lazyweb and Mobbin results unless the workflow is explicitly blocked.
 
 ## Layer Model Requirements
 

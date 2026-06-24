@@ -9,11 +9,15 @@
   "interface": {
     "displayName": "CX Design Gate",
     "shortDescription": "Gate AI UI work before implementation passes.",
-    "longDescription": "CX Design Gate provides reusable role definitions, project context packet requirements, visual fidelity contracts, hard fail rules, score caps, and handoff prompts for AI-driven UI design and implementation workflows.",
+    "longDescription": "CX Design Gate provides reusable role definitions, design_direction I/O contracts, project context packet requirements, Evidence Boards, visual fidelity contracts, hard fail rules, score caps, and handoff prompts for AI-driven UI design and implementation workflows.",
     "developerName": "ymt23",
     "category": "Productivity",
-    "capabilities": [],
-    "defaultPrompt": "Use Design Gate for this screen. First obtain a Project Context Packet, then produce or review the Visual Fidelity Contract before implementation proceeds."
+    "capabilities": [
+      "io-contract",
+      "reference-research",
+      "visual-fidelity"
+    ],
+    "defaultPrompt": "Use Design Gate for this screen. Accept minimal design_direction input, resolve requirements and calibration, then run required Lazyweb and Mobbin research, create an Evidence Board and Reference Decision Matrix, and stop with Input blocked or Reference research blocked when required inputs or sources are unavailable. Then produce or review the Visual Fidelity Contract before implementation proceeds."
   },
   "repository": "https://github.com/ymt23/cx-design-gate.git",
   "homepage": "https://github.com/ymt23/cx-design-gate",

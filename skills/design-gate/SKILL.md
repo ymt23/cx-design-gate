@@ -1,6 +1,6 @@
 ---
 name: design-gate
-description: Visual fidelity gate for AI-driven UI design and implementation. Use when Codex must turn a screen requirement, concept art, screenshot reference, Lazyweb/Mobbin reference, or implemented UI screenshot into a reviewed Visual Fidelity Contract, implementation handoff, rework instruction, or pass/fail design gate. Use for Human/CX role separation, Project Context Packet intake, persistent-control versus scroll-content layer checks, hard fail rules, score caps, and multi-agent UI implementation review.
+description: Visual fidelity gate for AI-driven UI design and implementation. Use when Codex must turn minimal screen input, concept art, screenshot reference, Lazyweb/Mobbin reference, or implemented UI screenshot into a design direction, Evidence Board, Reference Decision Matrix, Visual Fidelity Contract, implementation handoff, rework instruction, or pass/fail design gate. Use for Human/CX role separation, design_direction I/O contracts, required Lazyweb/Mobbin research before proposals or contracts, hard fail rules, score caps, and multi-agent UI implementation review.
 ---
 
 # Design Gate
@@ -13,17 +13,42 @@ Keep project truth outside this skill. Read project documents and calibration pa
 
 ## Workflow
 
-1. Obtain or request a Project Context Packet before making a design judgment.
-2. Read only the packet-linked project documents, screen requirements, references, and active calibration cases needed for the target screen.
-3. Produce one of these outputs, matching the user's request:
+1. Obtain a Minimal Invocation Packet or Project Context Packet before making a design judgment.
+2. Resolve requirements, calibration, constraints, and any linked references into a Project Context Packet.
+3. For `design_direction`, `reference_gate`, or `contract` requests, run the Reference Research Workflow before proposing a screen direction or contract.
+4. If required input is missing, stop with `Input blocked`. If required reference research is blocked, stop with `Reference research blocked`.
+5. Build an Evidence Board, then a Reference Decision Matrix, before converting references into a design direction or contract.
+6. Apply hard fail rules before assigning a score.
+7. Treat screenshots and visible behavior as stronger evidence than implementation self-reports.
+8. Do not implement unless the user explicitly asks for implementation.
+9. Produce one of these outputs, matching the user's request:
+   - Design Direction
+   - Evidence Board
+   - Reference Decision Matrix
    - Visual Fidelity Contract
    - Implementer Handoff Prompt
    - Designer Screenshot Review
    - Rework Instruction
    - Calibration Case Draft
-4. Apply hard fail rules before assigning a score.
-5. Treat screenshots and visible behavior as stronger evidence than implementation self-reports.
-6. Do not implement unless the user explicitly asks for implementation.
+
+## Reference Research Workflow
+
+Use this workflow whenever the user asks for a screen proposal, design direction, reference gate, or Visual Fidelity Contract, even if the user does not explicitly say "Reference Gate".
+
+Required sequence:
+1. Read the packet-linked requirements and relevant active calibration cases.
+2. Confirm both Lazyweb and Mobbin MCP reference tools are available.
+3. Search Lazyweb and Mobbin with target-screen queries derived from the requirements.
+4. Build an Evidence Board with preview, source URL or identifier, relevance, and evidence type.
+5. Decide whether concept evidence is needed. Use CX image generation only when the request or requirements ask for mood, polish, decoration, visual direction, or concept art. If not used, state `Concept Evidence: not generated` and why.
+6. Create a Reference Decision Matrix with `adopt`, `transform`, `reject`, or `compare_only` for each reference.
+7. Only after the Evidence Board and matrix, produce design directions or a Visual Fidelity Contract.
+
+Do not use calibration cases as a substitute for live Lazyweb/Mobbin reference research. If either Lazyweb or Mobbin is unavailable, missing, unauthenticated, or returns no usable evidence, output `Reference research blocked` with the missing source and do not produce screen proposals.
+
+For Mobbin, use screen and flow results as static or flow references unless the tool response includes motion evidence. Do not infer video, duration, easing, or animation metadata from Mobbin screen images.
+
+For detailed input and output shape, use `references/io-contract.md`, `templates/evidence-board.md`, `references/reference-decision-matrix.md`, and `templates/design-direction-output.md`.
 
 ## Role Split
 
@@ -41,9 +66,12 @@ Default roles:
 
 If the task lacks a Project Context Packet, ask the Project Agent or Human for one, or produce a packet request using `templates/project-context-packet.md`.
 
-Minimum packet fields:
+For `design_direction`, accept the Minimal Invocation Packet in `references/io-contract.md`. Do not require the Project Agent to prebuild live reference research, Evidence Board, or Reference Decision Matrix.
+
+Minimum Project Context Packet fields:
 - project_id
 - target_screen
+- request_type
 - screen_requirements
 - design_principles
 - implementation_scope
@@ -80,7 +108,9 @@ If the user requests scoring, apply `references/score-cap-rules.md`. Score caps 
 ## Resources
 
 - `references/role-model.md`: Human/CX/MCP responsibilities and forbidden judgments.
+- `references/io-contract.md`: Minimal design_direction input and fixed output contract.
 - `references/project-context-packet.md`: Context packet schema and intake rules.
+- `references/reference-decision-matrix.md`: Required Lazyweb/Mobbin reference research and adoption decisions.
 - `references/visual-fidelity-contract.md`: Contract structure for image/reference to UI implementation.
 - `references/hard-fail-rules.md`: Non-negotiable visual fail conditions.
 - `references/score-cap-rules.md`: Score cap rubric.

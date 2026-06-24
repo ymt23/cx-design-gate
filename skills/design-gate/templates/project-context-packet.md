@@ -1,5 +1,21 @@
 # Project Context Packet
 
+For design_direction, the Project Agent may provide a Minimal Invocation Packet instead:
+
+```yaml
+request_type: design_direction
+project_id:
+target_screen:
+requirements:
+  paths:
+calibration:
+  index_path:
+constraints:
+  no_implementation: true
+  no_spec_creation: true
+  no_calibration_creation: true
+```
+
 project_id:
 target_screen:
 request_type:
@@ -24,6 +40,11 @@ paths:
   type:
   path_or_url:
   notes:
+
+## Reference Research Required
+- Lazyweb: required for design_direction, reference_gate, contract
+- Mobbin: required for design_direction, reference_gate, contract
+- blocked_if_missing: true
 
 ## Non-Negotiable Rules
 -

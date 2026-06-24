@@ -10,6 +10,8 @@ Early OSS plugin scaffold. The public API and workflow files may change before t
 
 - A `design-gate` Codex skill for visual fidelity review workflows.
 - Project Context Packet requirements for project-specific design truth.
+- Minimal `design_direction` I/O contract so Project Agents do not have to restate reference workflow details.
+- Evidence Board requirements for displaying reference screenshots, URLs, and identifiers before design proposals.
 - Visual Fidelity Contract structure for concept art, screenshots, Lazyweb/Mobbin references, and implemented UI reviews.
 - Hard Fail and Score Cap rules for preventing optimistic visual scoring.
 - Role separation between Human, Project Agent, Designer CX, Architect CX, Implementer CX, and MCP reference services.
@@ -29,9 +31,9 @@ repo/.codex/cx-design-gate/calibration/
     <case-id>.md
 ```
 
-## Recommended Workflow
+## Required Workflow
 
-Design Gate does not replace reference research or concept generation. It sits between requirements, research, concept exploration, implementation, and screenshot-based acceptance.
+Design Gate does not replace reference research or concept generation. For screen proposals, design directions, reference gates, and Visual Fidelity Contracts, it must run reference research before synthesis. It sits between requirements, research, concept exploration, implementation, and screenshot-based acceptance.
 
 ```mermaid
 flowchart TD
@@ -51,9 +53,11 @@ flowchart TD
 ```
 
 - Requirements define what the screen must do.
+- LW and Mobbin are required live reference sources for new screen proposals, design directions, reference gates, and Visual Fidelity Contracts.
+- If either LW or Mobbin is unavailable, Design Gate stops with `Reference research blocked` instead of proposing from requirements or calibration alone.
 - LW, Mobbin, and other references provide real shipped UI patterns, structure, and experiment clues.
-- CX image generation explores mood, polish, logo treatment, small decorative parts, and visual direction.
-- Design Gate synthesizes those inputs into a Visual Fidelity Contract.
+- CX image generation explores mood, polish, logo treatment, small decorative parts, and visual direction when the request or requirements call for concept evidence.
+- Design Gate shows an Evidence Board and classifies references in a Reference Decision Matrix before synthesizing those inputs into design directions or a Visual Fidelity Contract.
 - Implementation is accepted only after screenshot-based review passes hard fail rules and score caps.
 
 ## Repository Layout
@@ -68,7 +72,7 @@ examples/generic/
 
 ## Skill Entry Point
 
-Use the skill as `design-gate` in Codex. The skill expects a Project Context Packet or enough information to request one.
+Use the skill as `design-gate` in Codex. For `design_direction`, the skill accepts a Minimal Invocation Packet and resolves it into project context before doing reference research.
 
 When installed through the local marketplace, the skill appears as `cx-design-gate:design-gate` in new Codex chats.
 
@@ -76,11 +80,33 @@ Typical flow:
 
 ```text
 1. Project Agent collects project docs, screen requirements, references, and active calibration cases.
-2. Design Gate creates or reviews a Visual Fidelity Contract.
-3. Implementer CX builds from the contract and returns screenshots/build evidence.
-4. Designer CX applies hard fail rules and score caps.
-5. Human makes the final pass/rework/stop decision.
+2. Design Gate runs Lazyweb and Mobbin reference research when creating design directions or contracts.
+3. Design Gate creates an Evidence Board.
+4. Design Gate creates a Reference Decision Matrix.
+5. Design Gate creates design directions or reviews a Visual Fidelity Contract.
+6. Implementer CX builds from the contract and returns screenshots/build evidence.
+7. Designer CX applies hard fail rules and score caps.
+8. Human makes the final pass/rework/stop decision.
 ```
+
+Minimal `design_direction` invocation:
+
+```yaml
+request_type: design_direction
+project_id: MN
+target_screen: Home
+requirements:
+  paths:
+    - docs/ops/tasks/.../home_skeleton.md
+calibration:
+  index_path: .codex/cx-design-gate/calibration/index.md
+constraints:
+  no_implementation: true
+  no_spec_creation: true
+  no_calibration_creation: true
+```
+
+The Project Agent should not prebuild live reference research, Evidence Board, Reference Decision Matrix, or design proposals. Design Gate owns that I/O contract.
 
 ## Validation
 
