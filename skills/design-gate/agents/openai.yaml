@@ -1,6 +1,6 @@
 interface:
   display_name: "CX Design Gate"
-  short_description: "Gate AI UI work before implementation passes."
-  default_prompt: "Use $design-gate for this screen. Accept minimal design_direction input, resolve requirements and calibration, then run required Lazyweb and Mobbin research, build an Evidence Board and Reference Decision Matrix, and stop with Input blocked or Reference research blocked when required inputs or sources are unavailable. For implementation review, compare screenshots or recordings against the contract before acceptance."
+  short_description: "Guide UI direction, evidence, handoff, and review."
+  default_prompt: "Use $design-gate for this screen. Accept short human direction without requiring request_type, infer the current intent, resolve requirements and optional default calibration, run Lazyweb and Mobbin as parallel reference lanes, build Evidence Board, Synthesis, State Capsule, and Self-Review outputs, and stop with Input blocked or Reference research blocked when required inputs or sources are unavailable. For implementation review, compare screenshots or recordings against the contract before acceptance."
 policy:
   allow_implicit_invocation: true

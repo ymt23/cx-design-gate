@@ -6,26 +6,31 @@ Use this contract to convert requirements and references into a UI implementatio
 
 1. Screen Purpose
 2. Evidence Board
-3. Reference Decision Matrix
-4. Source References
-5. Adopted Elements
-6. Rejected Elements
-7. Transformed Elements
-8. Information Hierarchy
-9. Layer Model
-10. Layout Regions
-11. Component Breakdown
-12. Visual Tokens
-13. Text and Readability Rules
-14. State Coverage
-15. Animation and Polish Scope
-16. Implementation Scope
-17. Simulator Review Criteria
-18. Hard Fail Rules
-19. Score Caps
-20. Open Risks
+3. Lazyweb Lane
+4. Mobbin Lane
+5. Reference Decision Matrix
+6. Synthesis Lane
+7. Source References
+8. Adopted Elements
+9. Rejected Elements
+10. Transformed Elements
+11. Information Hierarchy
+12. Layer Model
+13. Layout Regions
+14. Component Breakdown
+15. Visual Tokens
+16. Text and Readability Rules
+17. State Coverage
+18. Animation and Polish Scope
+19. Implementation Scope
+20. Simulator Review Criteria
+21. Hard Fail Rules
+22. Score Caps
+23. Open Risks
+24. State Capsule
+25. CXDG Self-Review
 
-For new design directions or contracts, create the Evidence Board and Reference Decision Matrix before filling Source References. Source References must cite live Lazyweb and Mobbin results unless the workflow is explicitly blocked.
+For new design directions or contracts, create Lazyweb Lane, Mobbin Lane, Evidence Board, Reference Decision Matrix, and Synthesis Lane before filling Source References. Source References must cite live Lazyweb and Mobbin results unless the workflow is explicitly blocked.
 
 ## Layer Model Requirements
 

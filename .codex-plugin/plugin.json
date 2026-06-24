@@ -1,7 +1,7 @@
 {
   "name": "cx-design-gate",
-  "version": "0.1.0",
-  "description": "Visual fidelity gate for AI-driven UI implementation workflows.",
+  "version": "0.2.0",
+  "description": "Conversation-first visual design gate for AI-driven UI workflows.",
   "author": {
     "name": "ymt23"
   },
@@ -9,15 +9,17 @@
   "interface": {
     "displayName": "CX Design Gate",
     "shortDescription": "Gate AI UI work before implementation passes.",
-    "longDescription": "CX Design Gate provides reusable role definitions, design_direction I/O contracts, project context packet requirements, Evidence Boards, visual fidelity contracts, hard fail rules, score caps, and handoff prompts for AI-driven UI design and implementation workflows.",
+    "longDescription": "CX Design Gate provides conversation-first UI direction, Lazyweb and Mobbin reference lanes, Evidence Boards, Visual Fidelity Contracts, State Capsules, Self-Review gates, version reports, hard fail rules, score caps, and handoff/review prompts for AI-driven UI design workflows.",
     "developerName": "ymt23",
     "category": "Productivity",
     "capabilities": [
       "io-contract",
       "reference-research",
-      "visual-fidelity"
+      "visual-fidelity",
+      "state-capsule",
+      "version-report"
     ],
-    "defaultPrompt": "Use Design Gate for this screen. Accept minimal design_direction input, resolve requirements and calibration, then run required Lazyweb and Mobbin research, create an Evidence Board and Reference Decision Matrix, and stop with Input blocked or Reference research blocked when required inputs or sources are unavailable. Then produce or review the Visual Fidelity Contract before implementation proceeds."
+    "defaultPrompt": "Use Design Gate for this screen. Accept short human direction without requiring request_type, infer the current intent, resolve requirements and optional default calibration, run Lazyweb and Mobbin as parallel reference lanes, create Evidence Board, Synthesis, State Capsule, and Self-Review outputs, and stop with Input blocked or Reference research blocked when required inputs or sources are unavailable. For implementation review, compare screenshots or recordings against the Visual Fidelity Contract before acceptance."
   },
   "repository": "https://github.com/ymt23/cx-design-gate.git",
   "homepage": "https://github.com/ymt23/cx-design-gate",

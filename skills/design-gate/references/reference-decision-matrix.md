@@ -1,10 +1,10 @@
 # Reference Decision Matrix
 
-Use this matrix after the Evidence Board and before producing a design direction or Visual Fidelity Contract.
+Use this matrix after the Lazyweb Lane, Mobbin Lane, and Evidence Board, and before producing a design direction, visual direction, or Visual Fidelity Contract.
 
 ## Required Behavior
 
-Lazyweb and Mobbin are both required for screen proposal, design direction, reference gate, and contract creation workflows.
+Lazyweb and Mobbin are both required for screen proposal, design direction, visual direction, reference gate, and contract creation workflows.
 
 If either source is unavailable, unauthenticated, missing from the active tool list, or returns no usable reference evidence, stop with:
 
@@ -29,6 +29,8 @@ Include the missing source and the attempted query. Do not continue by relying o
 
 ## Output Rule
 
-Design directions must cite the Evidence Board and matrix decisions they use. A proposal that does not cite Lazyweb and Mobbin evidence and matrix rows is incomplete.
+Design directions and visual directions must cite the Evidence Board and matrix decisions they use. A proposal that does not cite Lazyweb and Mobbin evidence and matrix rows is incomplete.
+
+Keep Lazyweb and Mobbin rows distinguishable. Lazyweb should mainly support flow, direction, hypothesis, and screen-pattern lessons. Mobbin should mainly support shipped UI, component structure, density, spacing, and transition lessons.
 
 Calibration cases can influence interpretation, but they do not replace live reference research.

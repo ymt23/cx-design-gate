@@ -6,6 +6,16 @@
 
 If either source is unavailable, stop here with `Reference research blocked`.
 
+## Lazyweb Lane
+- Query:
+- Results:
+- Direction / flow lessons:
+
+## Mobbin Lane
+- Query:
+- Results:
+- UI structure / density / spacing lessons:
+
 ## Concept Evidence
 - Status: generated | not generated
 - Reason:

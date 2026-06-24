@@ -1,6 +1,14 @@
 # Project Context Packet
 
-For design_direction, the Project Agent may provide a Minimal Invocation Packet instead:
+For normal use, the Human or Project Agent may provide short direction instead:
+
+```text
+@cx-design-gate
+MN Home の画面案を出してください。
+requirements は docs/ops/tasks/.../home_skeleton.md を参照してください。
+```
+
+Explicit request_type remains supported for backward compatibility:
 
 ```yaml
 request_type: design_direction
@@ -42,8 +50,8 @@ paths:
   notes:
 
 ## Reference Research Required
-- Lazyweb: required for design_direction, reference_gate, contract
-- Mobbin: required for design_direction, reference_gate, contract
+- Lazyweb: required for design_direction, visual_direction, reference_gate, contract
+- Mobbin: required for design_direction, visual_direction, reference_gate, contract
 - blocked_if_missing: true
 
 ## Non-Negotiable Rules

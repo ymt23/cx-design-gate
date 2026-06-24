@@ -11,3 +11,5 @@ Output:
 - Score cap if any
 - Pass / Borderline / Rework Required / Fail
 - One focused next action if rework is justified
+- State Capsule
+- CXDG Self-Review

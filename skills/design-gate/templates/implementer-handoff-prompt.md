@@ -5,3 +5,11 @@ Do not implement from a contract that lacks an Evidence Board and Reference Deci
 Do not change forbidden files or unrelated regions. Preserve persistent-control and scroll-content layer separation. Return changed files, build/test results, screenshots, known deviations, and unresolved risks.
 
 The implementer does not decide final visual pass. Do not self-score as accepted.
+
+Return:
+- changed files
+- build/test result
+- screenshot or recording evidence
+- known deviations
+- unresolved risks
+- statement that final visual pass is reserved for Designer CX / Design Gate

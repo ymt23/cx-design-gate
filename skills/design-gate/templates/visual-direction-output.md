@@ -1,4 +1,4 @@
-# Design Direction Output
+# Visual Direction Output
 
 ## Input Summary
 
@@ -10,19 +10,19 @@
 
 ## Mobbin Lane
 
+## Concept Evidence
+
 ## Evidence Board
 
 ## Reference Decision Matrix
 
 ## Synthesis Lane
 
-## Calibration Lessons Used
+## Visual Direction A
 
-## Design Direction A
+## Visual Direction B
 
-## Design Direction B
-
-## Design Direction C
+## Visual Direction C
 
 ## Human Decision Points
 
